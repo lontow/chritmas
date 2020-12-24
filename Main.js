@@ -232,7 +232,7 @@ function createInstructions() {
 
 	text = document.createElement( 'div' );
 	text.onSelectStart = null;
-	text.innerHTML = '<span style="color:' + theme[0] + ';font-size:40px;"><br /><center>Merry<br />Chritmas!</center></span><span style="font-size:20px;"><center><strong>'+greeting[0]+'</strong></center><br /><center>'+
+	text.innerHTML = '<span style="color:' + theme[0] + ';font-size:40px;"><br /><center>Merry<br />Christmas!</center></span><span style="font-size:20px;"><center><strong>'+greeting[0]+'</strong></center><br /><center>'+
 	greeting[1]+
 	'</center></span>';
 	text.style.color = theme[1];
