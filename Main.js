@@ -12,6 +12,16 @@ var themes = [ [ "#10222B", "#95AB63", "#BDD684", "#E2F0D6", "#F6FFE0" ],
 		[ "#343F40", "#736751", "#F2D7B6", "#BFAC95", "#8C3F3F" ],
 		[ "#000000", "#2D2B2A", "#561812", "#B81111", "#FFFFFF" ],
 		[ "#333B3A", "#B4BD51", "#543B38", "#61594D", "#B8925A" ] ];
+
+var greetings = [["如果你是一位学历规划师","天天开大单"],
+		["如果你是一名人民教师","学生听话，教课开心"],
+		["如果你是一名银行职员","天天有周黑鸭吃"],
+		["如果你是一名考研考生","旗开得胜"],
+		["如果你是一名医护人员","辛苦了！这一年！"],
+		["如果你是一名学生","考试全过，尽快放假！"],
+		];
+
+var greeting;
 var theme;
 
 var worldAABB, world, iterations = 1, timeStep = 1 / 15;
@@ -87,6 +97,8 @@ function reset() {
 
 	// color theme
 	theme = themes[ Math.random() * themes.length >> 0 ];
+	greeting = greetings[Math.random() * greetings.length >> 0];
+	
 	document.body.style[ 'backgroundColor' ] = theme[ 0 ];
 
 	bodies = [];
@@ -191,7 +203,7 @@ function onWindowDeviceOrientation( event ) {
 function createInstructions() {
 
 	var size = 300;
-
+	
 	var element = document.createElement( 'div' );
 	element.width = size;
 	element.height = size;	
@@ -219,7 +231,9 @@ function createInstructions() {
 
 	text = document.createElement( 'div' );
 	text.onSelectStart = null;
-	text.innerHTML = '<span style="color:' + theme[0] + ';font-size:40px;">MerryChritmas!</span><br /><br /><span style="font-size:15px;"><strong>如果你是一位学历规划师：</strong><br /><br />1. Drag a ball.<br />2.&nbsp;Click&nbsp;on&nbsp;the&nbsp;background.<br />3. Shake your browser.<br />4. Double click.<br />5. Play!</span>';
+	text.innerHTML = '<span style="color:' + theme[0] + ';font-size:40px;"><br /><center>Merry<br />Chritmas!</center></span><span style="font-size:20px;"><center><strong>'+greeting[0]+'</strong></center><br /><center>'+
+	greeting[1]+
+	'</center></span>';
 	text.style.color = theme[1];
 	text.style.position = 'absolute';
 	text.style.left = '0px';
